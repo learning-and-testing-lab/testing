@@ -10,4 +10,11 @@ resource "aws_vpc" "lab" {
 resource "aws_subnet" "lab" {
   vpc_id     = aws_vpc.lab.id
   cidr_block = "10.0.1.0/24"
-}
+
+
+# creating aws_security_group
+
+resource "aws_security_group" "lab" {
+  name   = "lab-sg"
+  vpc_id = aws_vpc.lab.id
+}}
